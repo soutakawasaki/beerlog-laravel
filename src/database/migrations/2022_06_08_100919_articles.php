@@ -26,3 +26,5 @@ class Articles extends Migration
         //
     }
 }
+
+#TEST
