@@ -13,7 +13,11 @@ class Articles extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('artiicle', function (Blueprint $table) {
+            $table->string('poster');
+            $table->string('posted_contents');
+            $table->timestamp('post_time');
+        });
     }
 
     /**
@@ -23,8 +27,6 @@ class Articles extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('personal_access_tokens');
     }
 }
-
-#TEST
