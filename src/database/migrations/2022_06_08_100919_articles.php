@@ -13,7 +13,7 @@ class Articles extends Migration
      */
     public function up()
     {
-        Schema::create('artiicle', function (Blueprint $table) {
+        Schema::create('articles', function (Blueprint $table) {
             $table->string('poster');
             $table->string('posted_contents');
             $table->timestamp('post_time');
