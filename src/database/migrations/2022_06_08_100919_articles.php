@@ -14,9 +14,12 @@ class Articles extends Migration
     public function up()
     {
         Schema::create('articles', function (Blueprint $table) {
+            $table->id();
+            $table->string('title');
             $table->string('poster');
+            $table->string('categories');
             $table->string('posted_contents');
-            $table->timestamp('post_time');
+            $table->timestamp('posted_at');
         });
     }
 
