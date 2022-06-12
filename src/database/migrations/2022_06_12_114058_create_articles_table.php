@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Articles extends Migration
+class CreateArticlesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,10 +15,10 @@ class Articles extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
+            // usersテーブルのユーザーを使いたいため外部キー制約をつける
+            $table->foreignId('user_id')->constrained('users');
             $table->string('title');
-            $table->string('poster');
-            $table->string('categories');
-            $table->string('posted_contents');
+            $table->string('content');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class Articles extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('personal_access_tokens');
+        Schema::dropIfExists('articles');
     }
 }
