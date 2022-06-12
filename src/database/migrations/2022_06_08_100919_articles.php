@@ -19,7 +19,7 @@ class Articles extends Migration
             $table->string('poster');
             $table->string('categories');
             $table->string('posted_contents');
-            $table->timestamp('posted_at');
+            $table->timestamps();
         });
     }
 
